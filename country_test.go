@@ -20,9 +20,10 @@ func TestFindName(t *testing.T) {
 			expAlpha2Code: "GR",
 		},
 		{
-			name:    "error on multiple results",
-			country: "united",
-			err:     ErrorMultipleCountries,
+			name:          "fallback to FindFullName",
+			country:       "china",
+			err:           nil,
+			expAlpha2Code: "CN",
 		},
 	}
 
